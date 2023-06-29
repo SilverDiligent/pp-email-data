@@ -1,0 +1,4 @@
+export const API_KEY =
+  'eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODYyMzU5MDAsImlzcyI6IlByb29mcG9pbnQgSW5jLiIsImNsdXN0ZXJJZCI6InNhbHRyaXZlcl9ob3N0ZWQiLCJ1c2VySWQiOiJzcGVjaWZpY0VtYWlsUmVwb3J0In0.mgYnlOn_9VUTKLM1uyNTrgdJuA6yR4tD57NbMnIPbBqCYX5P4Uqg2iKSQKhGiRIrbKI1gWiTSItLmMT3DOpw_g' // replace with your actual access token
+
+export const clusterID = 'saltriver_hosted'
