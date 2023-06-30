@@ -24,10 +24,21 @@ async function fetchHistoricalData() {
   })
 
   ws.on('message', function incoming(data) {
-    console.log('Received data:', data)
+    // console.log('Received data:', data)
+    const dataString = data.toString()
+    console.log('received data:', dataString)
 
-    const messages = JSON.parse(data)
+    const messages = JSON.parse(dataString)
     console.log('Parsed messages:', messages)
+
+    // If messages is an object and has a "sender" property, put it into an array for filtering
+    if (
+      typeof messages === 'object' &&
+      !Array.isArray(messages) &&
+      messages.sender
+    ) {
+      messages = [messages]
+    }
 
     if (Array.isArray(messages)) {
       const filteredMessages = messages.filter(
