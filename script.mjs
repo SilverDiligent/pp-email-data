@@ -24,7 +24,23 @@ async function fetchHistoricalData() {
   })
 
   ws.on('message', function incoming(data) {
-    console.log(data)
+    console.log('Received data:', data)
+
+    const messages = JSON.parse(data)
+    console.log('Parsed messages:', messages)
+
+    if (Array.isArray(messages)) {
+      const filteredMessages = messages.filter(
+        (message) => message.sender === 'alexis.crawford@srpnet.com'
+      )
+      console.log('Filtered messages:', filteredMessages)
+    } else {
+      console.log('Messages is not an array.')
+    }
+  })
+
+  ws.on('error', function error(err) {
+    console.error('WebSocket error: ${error}')
   })
 }
 fetchHistoricalData()
